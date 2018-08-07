@@ -6,6 +6,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 
+import com.example.tin.coinmarketcap.adapters.CoinAdapter;
 import com.example.tin.coinmarketcap.serverConnection.responses.ListingResponse;
 
 import java.util.ArrayList;
@@ -21,7 +22,7 @@ public class MainActivity extends AppCompatActivity implements MainContract.Main
     private MainPresenter mainPresenter;
 
     private RecyclerView mRecyclerView;
-    //private CoinAdapter mAdapter;
+    private CoinAdapter mAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,18 +40,19 @@ public class MainActivity extends AppCompatActivity implements MainContract.Main
     public void showData(ArrayList<ListingResponse.Data> coins) {
 
         Log.d(TAG, "showData: " + String.valueOf(coins));
+
+        mAdapter = new CoinAdapter(coins, getApplicationContext());
+        mRecyclerView.setAdapter(mAdapter);
     }
 
 
     private void setupViews() {
 
-//        /* Setting up the RecyclerView and Adapter*/
-//        mRecyclerView = findViewById(R.id.rV_main);
-//        mRecyclerView.setHasFixedSize(true);
-//        LinearLayoutManager mLinearLayoutManager = new LinearLayoutManager(this);
-//        mRecyclerView.setLayoutManager(mLinearLayoutManager);
-//        mAdapter = new CoinAdapter(null, getApplicationContext(), this);
-//        mRecyclerView.setAdapter(mAdapter);
+        /* Setting up the RecyclerView and Adapter*/
+        mRecyclerView = findViewById(R.id.rV_main);
+        mRecyclerView.setHasFixedSize(true);
+        LinearLayoutManager mLinearLayoutManager = new LinearLayoutManager(this);
+        mRecyclerView.setLayoutManager(mLinearLayoutManager);
     }
 
 }

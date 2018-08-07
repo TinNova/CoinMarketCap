@@ -22,7 +22,32 @@ public class ListingResponse {
 //        double volume_24h;
 //        double market_cap;
 
+
+        public int getId() {
+            return id;
+        }
+
+        public String getName() {
+            return name;
+        }
+
+        public String getSymbol() {
+            return symbol;
+        }
+
+        public int getCmc_rank() {
+            return cmc_rank;
+        }
+
+        public double getCirculating_supply() {
+            return circulating_supply;
+        }
+
+        public double getMax_supply() {
+            return max_supply;
+        }
     }
+
 }
 
 //"data": [
