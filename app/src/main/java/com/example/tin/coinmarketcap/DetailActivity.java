@@ -72,4 +72,5 @@ public class DetailActivity extends AppCompatActivity implements DetailContract.
 
         Toast.makeText(this, "We're making a toast with: " + currencyName, Toast.LENGTH_SHORT).show();
     }
+
 }
