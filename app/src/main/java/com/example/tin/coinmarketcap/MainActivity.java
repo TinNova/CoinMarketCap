@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity implements MainContract.Main
     }
 
     @Override
-    public void showData(ArrayList<ListingResponse.Data> coins) {
+    public void showData(ArrayList<ListingResponse.DataModel> coins) {
 
         Log.d(TAG, "showData: " + String.valueOf(coins));
 

@@ -4,13 +4,13 @@ import java.util.ArrayList;
 
 public class ListingResponse {
 
-    public ArrayList<Data> data;
+    public ArrayList<DataModel> data;
 
-    public ArrayList<Data> getCoins() {
+    public ArrayList<DataModel> getCoins() {
         return data;
     }
 
-    public class Data {
+    public class DataModel {
 
         int id;
         String name;

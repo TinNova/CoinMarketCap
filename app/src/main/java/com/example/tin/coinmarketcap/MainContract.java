@@ -9,7 +9,7 @@ public interface MainContract {
 
     interface MainScreen {
 
-        void showData(ArrayList<ListingResponse.Data> coins);
+        void showData(ArrayList<ListingResponse.DataModel> coins);
 
     }
 

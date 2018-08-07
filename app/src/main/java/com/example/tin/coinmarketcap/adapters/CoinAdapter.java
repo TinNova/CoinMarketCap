@@ -16,9 +16,9 @@ import java.util.ArrayList;
 
 public class CoinAdapter extends RecyclerView.Adapter<CoinAdapter.ViewHolder> {
 
-    private ArrayList<ListingResponse.Data> mCoins;
+    private ArrayList<ListingResponse.DataModel> mCoins;
 
-    public CoinAdapter(ArrayList<ListingResponse.Data> mCoin, Context context) {
+    public CoinAdapter(ArrayList<ListingResponse.DataModel> mCoin, Context context) {
         this.mCoins = mCoin;
         Context mContext = context;
     }
@@ -36,7 +36,7 @@ public class CoinAdapter extends RecyclerView.Adapter<CoinAdapter.ViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, int position) {
 
-        ListingResponse.Data coin = mCoins.get(position);
+        ListingResponse.DataModel coin = mCoins.get(position);
 
         viewHolder.rankTv.setText(String.valueOf(coin.getCmc_rank()));
         viewHolder.nameTv.setText(coin.getName());
