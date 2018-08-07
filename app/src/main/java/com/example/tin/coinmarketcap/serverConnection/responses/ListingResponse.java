@@ -4,72 +4,63 @@ import java.util.ArrayList;
 
 public class ListingResponse {
 
-    private ArrayList<Coin> Coins;
+    public ArrayList<Data> data;
 
+    public ArrayList<Data> getCoins() {
+        return data;
+    }
 
-    public static class Coin {
+    public class Data {
 
         int id;
         String name;
         String symbol;
-        int rank;
+        int cmc_rank;
         double circulating_supply;
         double max_supply;
-        double price;
-        double volume_24h;
-        double market_cap;
+//        double price;
+//        double volume_24h;
+//        double market_cap;
 
-        public Coin(int id, String name, String symbol, int rank, double circulating_supply, double max_supply, double price, double volume_24h, double market_cap) {
-            this.id = id;
-            this.name = name;
-            this.symbol = symbol;
-            this.rank = rank;
-            this.circulating_supply = circulating_supply;
-            this.max_supply = max_supply;
-            this.price = price;
-            this.volume_24h = volume_24h;
-            this.market_cap = market_cap;
-        }
-
-        public int getId() {
-            return id;
-        }
-
-        public String getName() {
-            return name;
-        }
-
-        public String getSymbol() {
-            return symbol;
-        }
-
-        public int getRank() {
-            return rank;
-        }
-
-        public double getCirculating_supply() {
-            return circulating_supply;
-        }
-
-        public double getMax_supply() {
-            return max_supply;
-        }
-
-        public double getPrice() {
-            return price;
-        }
-
-        public double getVolume_24h() {
-            return volume_24h;
-        }
-
-        public double getMarket_cap() {
-            return market_cap;
-        }
-
-    }
-
-    public ArrayList<Coin> getCoins() {
-        return Coins;
     }
 }
+
+//        "data": [
+//        {
+//                "id": 1,
+//                "name": "Bitcoin",
+//                "symbol": "BTC",
+//                "slug": "bitcoin",
+//                "cmc_rank": 5,
+//                "num_markets": 500,
+//                "circulating_supply": 16950100,
+//                "total_supply": 16950100,
+//                "max_supply": 21000000,
+//                "last_updated": "2018-06-02T22:51:28.209Z",
+//                "quote": {
+//            "USD": {
+//                "price": 9283.92,
+//                        "volume_24h": 7155680000,
+//                        "percent_change_1h": -0.152774,
+//                        "percent_change_24h": 0.518894,
+//                        "percent_change_7d": 0.986573,
+//                        "market_cap": 158055024432
+//            },
+//            "BTC": {
+//                "price": 1,
+//                        "volume_24h": 772012,
+//                        "percent_change_1h": 0,
+//                        "percent_change_24h": 0,
+//                        "percent_change_7d": 0,
+//                        "market_cap": 17024600
+//            }
+//        }
+//        }
+//],
+//        "status": {
+//            "timestamp": "2018-06-02T22:51:28.209Z",
+//                    "error_code": 0,
+//                    "error_message": "",
+//                    "elapsed": 10,
+//                    "credit_count": 1
+//        }

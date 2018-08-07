@@ -13,7 +13,7 @@ import io.reactivex.schedulers.Schedulers;
 
 public class MainPresenter implements MainContract.MainPresenter {
 
-    private static final String TAG = MainActivity.class.getSimpleName();
+    private static final String TAG = MainPresenter.class.getSimpleName();
 
     private final MainContract.MainScreen mainScreen;
 
@@ -52,7 +52,7 @@ public class MainPresenter implements MainContract.MainPresenter {
                     @Override
                     public void onNext(ListingResponse response) {
 
-                        Log.d(TAG, "successful load of products " + response.getCoins());
+                        Log.d(TAG, "successful load of products: " + response.getCoins());
 
                         mainScreen.showData(response.getCoins());
                     }
@@ -60,7 +60,7 @@ public class MainPresenter implements MainContract.MainPresenter {
                     @Override
                     public void onError(Throwable throwable) {
 
-                        Log.e(TAG, "error while load products " + Log.getStackTraceString(throwable));
+                        Log.e(TAG, "error while load products: " + Log.getStackTraceString(throwable));
                     }
 
                     @Override

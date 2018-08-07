@@ -26,7 +26,7 @@ public class RestService {
             Retrofit retrofit = new Retrofit.Builder()
                     .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                     .addConverterFactory(GsonConverterFactory.create())
-                    .baseUrl("https://api.coinmarketcap.com/v2/ticker/")
+                    .baseUrl("https://pro-api.coinmarketcap.com/")
                     .client(provideOkHttp(application))
                     .build();
 
