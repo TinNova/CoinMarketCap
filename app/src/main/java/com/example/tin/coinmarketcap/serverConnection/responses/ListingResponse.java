@@ -25,42 +25,52 @@ public class ListingResponse {
     }
 }
 
-//        "data": [
+//"data": [
 //        {
-//                "id": 1,
-//                "name": "Bitcoin",
-//                "symbol": "BTC",
-//                "slug": "bitcoin",
-//                "cmc_rank": 5,
-//                "num_markets": 500,
-//                "circulating_supply": 16950100,
-//                "total_supply": 16950100,
-//                "max_supply": 21000000,
-//                "last_updated": "2018-06-02T22:51:28.209Z",
-//                "quote": {
-//            "USD": {
-//                "price": 9283.92,
-//                        "volume_24h": 7155680000,
-//                        "percent_change_1h": -0.152774,
-//                        "percent_change_24h": 0.518894,
-//                        "percent_change_7d": 0.986573,
-//                        "market_cap": 158055024432
-//            },
-//            "BTC": {
-//                "price": 1,
-//                        "volume_24h": 772012,
-//                        "percent_change_1h": 0,
-//                        "percent_change_24h": 0,
-//                        "percent_change_7d": 0,
-//                        "market_cap": 17024600
-//            }
-//        }
-//        }
-//],
-//        "status": {
-//            "timestamp": "2018-06-02T22:51:28.209Z",
-//                    "error_code": 0,
-//                    "error_message": "",
-//                    "elapsed": 10,
-//                    "credit_count": 1
-//        }
+//        "id": 1,
+//        "name": "Bitcoin",
+//        "symbol": "BTC",
+//        "slug": "bitcoin",
+//        "circulating_supply": 17194112,
+//        "total_supply": 17194112,
+//        "max_supply": 21000000,
+//        "date_added": "2013-04-28T00:00:00.000Z",
+//        "num_markets": 327,
+//        "cmc_rank": 1,
+//        "last_updated": "2018-08-06T21:04:23.000Z",
+//        "quote": {
+//              "USD": {
+//                  "price": 6950.5614524,
+//                  "volume_24h": 3785643302.4097,
+//                  "percent_change_1h": -0.344539,
+//                  "percent_change_24h": -1.65271,
+//                  "percent_change_7d": -14.348,
+//                  "market_cap": 119508732075.44827,
+//                  "last_updated": "2018-08-06T21:04:23.000Z"
+//                      }
+//                  }
+//        },
+//        {
+//        "id": 1027,
+//        "name": "Ethereum",
+//        "symbol": "ETH",
+//        "slug": "ethereum",
+//        "circulating_supply": 101163058.1553,
+//        "total_supply": 101163058.1553,
+//        "max_supply": null,
+//        "date_added": "2015-08-07T00:00:00.000Z",
+//        "num_markets": 345,
+//        "cmc_rank": 2,
+//        "last_updated": "2018-08-06T21:04:38.000Z",
+//        "quote": {
+//              "USD": {
+//                  "price": 405.448491751,
+//                  "volume_24h": 1358291181.09817,
+//                  "percent_change_1h": -0.246813,
+//                  "percent_change_24h": -1.28415,
+//                  "percent_change_7d": -10.8583,
+//                  "market_cap": 41016409349.98509,
+//                  "last_updated": "2018-08-06T21:04:38.000Z"
+//                      }
+//                  }
+//        },
