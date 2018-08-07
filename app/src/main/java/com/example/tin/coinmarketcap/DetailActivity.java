@@ -40,9 +40,9 @@ public class DetailActivity extends AppCompatActivity {
             mCoins = getIntent.getParcelableArrayListExtra(MainActivity.COIN_LIST);
             positionClicked = getIntent.getIntExtra(MainActivity.POSITION_CLICKED, -1);
 
-            rankTv.setText(String.valueOf(mCoins.get(positionClicked).getCmc_rank()));
-            nameTv.setText(mCoins.get(positionClicked).getName());
-            cSupplyTv.setText(String.valueOf(mCoins.get(positionClicked).getCirculating_supply()));
+            rankTv.setText(String.format("%s%s", getString(R.string.rank), String.valueOf(mCoins.get(positionClicked).getCmc_rank())));
+            nameTv.setText(String.format("%s%s", getString(R.string.name), mCoins.get(positionClicked).getName()));
+            cSupplyTv.setText(String.format("%s%s", getString(R.string.c_supply), String.valueOf(mCoins.get(positionClicked).getCirculating_supply())));
 
         } else {
             Toast.makeText(this, "Error loading data, please try again.", Toast.LENGTH_SHORT).show();
