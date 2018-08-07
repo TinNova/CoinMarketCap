@@ -1,10 +1,12 @@
 package com.example.tin.coinmarketcap;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.View;
 
 import com.example.tin.coinmarketcap.adapters.CoinAdapter;
 import com.example.tin.coinmarketcap.serverConnection.responses.ListingResponse;
@@ -15,14 +17,20 @@ import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.schedulers.Schedulers;
 
-public class MainActivity extends AppCompatActivity implements MainContract.MainScreen {
+public class MainActivity extends AppCompatActivity implements MainContract.MainScreen, CoinPositionListener {
 
-    private static final String TAG = MainPresenter.class.getSimpleName();
+    public static String COIN_LIST = "coinList";
+    public static final String POSITION_CLICKED = "positionClicked";
+
+
+    private static final String TAG = MainActivity.class.getSimpleName();
 
     private MainPresenter mainPresenter;
 
     private RecyclerView mRecyclerView;
     private CoinAdapter mAdapter;
+    private ArrayList<ListingResponse.DataModel> mCoins;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,10 +49,22 @@ public class MainActivity extends AppCompatActivity implements MainContract.Main
 
         Log.d(TAG, "showData: " + String.valueOf(coins));
 
-        mAdapter = new CoinAdapter(coins, getApplicationContext());
+        mCoins = coins;
+
+        mAdapter = new CoinAdapter(mCoins, getApplicationContext(),this);
         mRecyclerView.setAdapter(mAdapter);
     }
 
+    @Override
+    public void coinItemClick(View v, int position) {
+
+        Log.d(TAG, "Item Position: " + position);
+
+        Intent intent = new Intent(this, DetailActivity.class);
+        intent.putExtra(POSITION_CLICKED, position);
+        intent.putParcelableArrayListExtra(COIN_LIST, mCoins);
+        startActivity(intent);
+    }
 
     private void setupViews() {
 
@@ -54,5 +74,4 @@ public class MainActivity extends AppCompatActivity implements MainContract.Main
         LinearLayoutManager mLinearLayoutManager = new LinearLayoutManager(this);
         mRecyclerView.setLayoutManager(mLinearLayoutManager);
     }
-
 }

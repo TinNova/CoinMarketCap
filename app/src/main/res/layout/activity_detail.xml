@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     tools:context="com.example.tin.coinmarketcap.DetailActivity">
 
     <TextView
@@ -27,52 +27,15 @@
         app:layout_constraintTop_toBottomOf="@+id/tV_detail_rank" />
 
     <TextView
-        android:id="@+id/tV_detail_price"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        tools:text="Price:"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tV_detail_name" />
-
-    <TextView
-        android:id="@+id/tV_detail_mCap"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        tools:text="Market Cap:"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tV_detail_price" />
-
-    <TextView
-        android:id="@+id/tv_detail_volume"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        tools:text="Volume (24H):"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tV_detail_mCap" />
-
-    <TextView
         android:id="@+id/tV_detail_cSupply"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        tools:text="Circulating Supply:"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_detail_volume" />
+        app:layout_constraintTop_toBottomOf="@+id/tV_detail_name"
+        tools:text="Circulating Supply:" />
 
-    <TextView
-        android:id="@+id/tV_detail_maxSupply"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        tools:text="Max Supply:"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tV_detail_cSupply" />
 </android.support.constraint.ConstraintLayout>

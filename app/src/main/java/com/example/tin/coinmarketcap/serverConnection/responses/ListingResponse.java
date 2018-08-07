@@ -1,5 +1,8 @@
 package com.example.tin.coinmarketcap.serverConnection.responses;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import java.util.ArrayList;
 
 public class ListingResponse {
@@ -10,7 +13,7 @@ public class ListingResponse {
         return data;
     }
 
-    public class DataModel {
+    public static class DataModel implements Parcelable {
 
         int id;
         String name;
@@ -22,6 +25,15 @@ public class ListingResponse {
 //        double volume_24h;
 //        double market_cap;
 
+
+        protected DataModel(Parcel in) {
+            id = in.readInt();
+            name = in.readString();
+            symbol = in.readString();
+            cmc_rank = in.readInt();
+            circulating_supply = in.readDouble();
+            max_supply = in.readDouble();
+        }
 
         public int getId() {
             return id;
@@ -45,6 +57,33 @@ public class ListingResponse {
 
         public double getMax_supply() {
             return max_supply;
+        }
+
+        public static final Creator<DataModel> CREATOR = new Creator<DataModel>() {
+            @Override
+            public DataModel createFromParcel(Parcel in) {
+                return new DataModel(in);
+            }
+
+            @Override
+            public DataModel[] newArray(int size) {
+                return new DataModel[size];
+            }
+        };
+
+        @Override
+        public void writeToParcel(Parcel parcel, int i) {
+            parcel.writeInt(id);
+            parcel.writeString(name);
+            parcel.writeString(symbol);
+            parcel.writeInt(cmc_rank);
+            parcel.writeDouble(circulating_supply);
+            parcel.writeDouble(max_supply);
+        }
+
+        @Override
+        public int describeContents() {
+            return 0;
         }
     }
 

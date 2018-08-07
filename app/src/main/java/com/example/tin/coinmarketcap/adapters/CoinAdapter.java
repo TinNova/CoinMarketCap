@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.example.tin.coinmarketcap.CoinPositionListener;
 import com.example.tin.coinmarketcap.R;
 import com.example.tin.coinmarketcap.serverConnection.responses.ListingResponse;
 
@@ -18,9 +19,12 @@ public class CoinAdapter extends RecyclerView.Adapter<CoinAdapter.ViewHolder> {
 
     private ArrayList<ListingResponse.DataModel> mCoins;
 
-    public CoinAdapter(ArrayList<ListingResponse.DataModel> mCoin, Context context) {
+    private final CoinPositionListener coinPositionListener;
+
+    public CoinAdapter(ArrayList<ListingResponse.DataModel> mCoin, Context context, CoinPositionListener listener) {
         this.mCoins = mCoin;
         Context mContext = context;
+        this.coinPositionListener = listener;
     }
 
     @NonNull
@@ -53,7 +57,6 @@ public class CoinAdapter extends RecyclerView.Adapter<CoinAdapter.ViewHolder> {
         }
     }
 
-
     public class ViewHolder extends RecyclerView.ViewHolder {
 
         final TextView rankTv;
@@ -67,6 +70,15 @@ public class CoinAdapter extends RecyclerView.Adapter<CoinAdapter.ViewHolder> {
             rankTv = itemView.findViewById(R.id.tV_rank);
             nameTv = itemView.findViewById(R.id.tV_name);
             priceTv = itemView.findViewById(R.id.tV_price);
+
+            /* Setting up the onClickListeners */
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    /* Implementing the interface method */
+                    coinPositionListener.coinItemClick(view, getAdapterPosition());
+                }
+            });
         }
     }
 }
