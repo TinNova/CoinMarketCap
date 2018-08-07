@@ -10,7 +10,7 @@ import com.example.tin.coinmarketcap.serverConnection.responses.ListingResponse;
 
 import java.util.ArrayList;
 
-public class DetailActivity extends AppCompatActivity {
+public class DetailActivity extends AppCompatActivity implements DetailContract.DetailScreen {
 
     private TextView rankTv;
     private TextView nameTv;
@@ -19,13 +19,16 @@ public class DetailActivity extends AppCompatActivity {
     private ArrayList<ListingResponse.DataModel> mCoins;
     private int positionClicked;
 
+    private DetailPresenter detailPresenter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
 
-        setupViews();
+        detailPresenter = new DetailPresenter(this);
 
+        setupViews();
     }
 
     private void setupViews() {
